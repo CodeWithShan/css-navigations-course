@@ -1,0 +1,212 @@
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.6rem;
+    background-color: #f1f1f1;
+}
+
+.ox-hidden{
+    overflow-x: hidden;
+}
+
+.oy-hidden{
+    overflow-y: hidden;
+}
+
+.container{
+    max-width: 134rem;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 8rem;
+}
+
+.navbar-container{
+    box-shadow: 0 0 9px rgba(0,0,0,0.04);
+    background-color: #fff;
+}
+
+.navbar-container--sticky{
+    position: sticky;
+    top: 0;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand{
+    width: 7.5rem;
+}
+
+.navbar-action{
+     cursor: pointer;
+     height: 2.5rem;
+     width: 2.5rem;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     z-index: 200;
+}
+
+.navbar-icon{
+    width: 2rem;
+    height: 2px;
+    background-color: #000;
+    transition: .3s;
+}
+
+.navbar-action--hover:hover .navbar-icon:first-child{
+    width: 2.3rem;
+}
+
+.navbar-action--hover:hover .navbar-icon:last-child{
+    width: 1rem;
+}
+
+
+.navbar-icon:first-child{
+    margin-bottom: .8rem;
+}
+
+.navbar-action--active .navbar-icon:first-child{
+    transform: translateY(1px) rotate(45deg);
+    margin: 0;
+}
+
+.navbar-action--active .navbar-icon:last-child{
+    transform: translateY(-1px) rotate(-45deg);
+}
+
+.dock{
+    height: 100vh;
+    background-color: #1d1d1d;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    transform: translateX(100%);
+    transition: .6s ease-in-out;
+    
+}
+
+.dock-active{
+    transform: translateX(0);
+}
+
+.nav{
+    background-color: #f2b90c;
+    max-width: 45rem;
+    width: 100%;
+}
+
+.content{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    color: #fff;
+    font-size: 8rem;
+}
+
+.list{
+    list-style: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-item:not(:first-child){
+    margin-top: 2rem;
+}
+
+.list-link{
+    text-decoration: none;
+    font-size: 3rem;
+    color: #1d1d1d;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    transition: transform .3s;
+}
+
+.list-link::after{
+    content: "";
+    display: block;
+    background: #000;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    transform: translateX(-101%);
+    bottom: 0;
+    transition: transform .3s;
+}
+
+.list-link:hover::after{
+    transform: translateX(0);
+}
+
+.list-link:hover{
+    transform: scale(1.1);
+}
+
+
+
+
+.section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8rem;
+}
+
+.section:nth-child(1){
+    background-color: #f1c40f;
+}
+
+.section:nth-child(2){
+    background-color: #e67e22;
+}
+
+.section:nth-child(3){
+    background-color: #3498db;
+}
+
+.section:nth-child(4){
+    background-color: #16a085;
+}
+
+.section:nth-child(5){
+    background-color: #e74c3c;
+}
+
+
+
+@media(max-width: 850px){
+    .content{
+        display: none;
+    }
+
+    .nav{
+        max-width: 100%;
+    }
+
+    .container{
+        padding: 0 3rem;
+    }
+}

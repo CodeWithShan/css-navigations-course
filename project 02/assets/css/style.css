@@ -1,0 +1,92 @@
+*,*::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+}
+
+nav{
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+}
+
+.header, .footer{
+    background-color: #000;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+}
+
+.toggler{
+    height: 3rem;
+    width: 3rem;
+    background-color: #f1c40f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 1.8rem;
+    transition: width .5s;
+    position: relative;
+    z-index: 100;
+}
+
+.toggler::before{
+    content: '+';
+    font-size: 3.5rem;
+    cursor: pointer;
+    transition: transform .5s;
+}
+
+.toggler--active{
+    background-color: #161616;
+    color: #fff;
+    width: 15rem;
+}
+
+.toggler--active::before{
+    transform: rotate(135deg) translateY(1px);
+}
+
+
+.menu{
+    list-style: none;
+    max-width: 3.5rem;
+    background-color: #f1c40f;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    display: grid;
+    padding: 1.6rem 1rem;
+    overflow: hidden;
+    row-gap: 2rem;
+    transform: translateY(-135%);
+    transition: max-width .5s, transform .5s .3s;
+}
+
+.menu__link{
+    text-decoration: none;
+    display: grid;
+    grid-template-columns: 1.5rem 1fr;
+    column-gap: 1.6rem;
+    align-items: center;
+    color: #000;
+}
+
+.menu--active{
+    transform: translateY(0);
+    max-width: 15rem;
+}
